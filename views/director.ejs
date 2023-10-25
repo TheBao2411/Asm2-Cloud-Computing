@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      /* Custom CSS for enhanced colors */
+      .bg-primary-custom {
+        background-color: #96ff33; /* Custom primary color */
+      }
+      .text-custom {
+        color: #00806b; /* Custom text color */
+      }
+  
+      /* Custom CSS for background image */
+      body {
+        background: url('your-background-image.jpg') no-repeat center center fixed;
+        background-size: cover;
+      }
+    </style>
+    <script>
+      var interval = 5000; // Set the interval to 5000 milliseconds (5 seconds)
+      setTimeout(function() {
+        window.location.reload();
+      }, interval);
+    </script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary-custom"></nav>
+    <a class="navbar-brand text-custom" href="#">Mobile Shop</a>
+    <form action="/users/refreshtime" method="post"> 
+      Update interval (in seconds): 
+      <select name="interval">
+        <option value=5 selected>5</option> 
+        <option value=10>10</option> 
+        <option value=15>15</option> 
+        <option value=20>20</option> 
+      </select> 
+      <input type="submit" value="Set">
+    </form>
+    <div class="container mt-4">
+      <h1 class="display-4 text-custom"><%= title %></h1>
+    <p>Welcome, <%= uname %>  </p>
+    <%- product_cells %>
+  </body>
+  <a href="/users/logout"> Logout </a>
+  
+</html>
